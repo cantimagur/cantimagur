@@ -43,3 +43,16 @@ WHERE first_name IN ('Penelope','Nick','Ed');
 
 SELECT * FROM film
 WHERE (rental_rate IN (0.99,2.99,4.99)) AND (replacement_cost IN (12.99,15.99,28.99));
+
+
+LIKE ILIKE EXERCİSE
+
+--SELECT * FROM country
+--WHERE country LIKE 'A%a';
+
+--SELECT country FROM country
+--WHERE country LIKE '%n' AND LENGTH (country) >=6;
+
+
+--SELECT * FROM film
+--WHERE title LIKE 'C%' AND length > 90 AND rental_rate = 2.99 ;
