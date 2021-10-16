@@ -191,6 +191,25 @@ insert into employee (id, Name, birthday, email) values (49, 'Evan Couve', '2021
 insert into employee (id, Name, birthday, email) values (50, 'Allianora Lancley', '2021-07-23', 'alancley1d@51.la');
 
 
+DELETE FROM employee
+WHERE id = 1;
 
+SELECT * FROM employee;
+
+UPDATE employee
+SET name = 'can timağur'
+WHERE id = 4;
+
+SELECT * FROM employee
+ORDER BY id ASC;
+
+DELETE FROM employee
+WHERE name = 'Julie Edmondson';
+
+SELECT * FROM employee;
+
+UPDATE employee
+SET email = 'can.timagur@eva.guru'
+WHERE id = 4;
 
 
