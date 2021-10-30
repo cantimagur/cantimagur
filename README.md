@@ -279,3 +279,52 @@ UNION ALL
 SELECT first_name FROM customer
 );
 
+
+SUBQUERİES - ANY - ALL 
+
+
+SELECT title, length, (SELECT AVG(length) FROM film), (length > (SELECT AVG(length) FROM film)) AS ortalamadan_uzun_film_sayısı FROM film 
+
+
+SELECT title, length, (SELECT AVG(length) FROM film)  FROM film
+WHERE length > 
+(
+SELECT AVG(length) FROM film
+);
+
+
+SELECT COUNT(*) FROM film
+WHERE length > 
+(
+SELECT AVG(length) FROM film
+);
+
+
+SELECT COUNT(*) FROM film
+WHERE rental_rate = 
+(
+SELECT MAX(rental_rate) FROM film
+);
+
+SELECT MIN(rental_rate ), MIN(replacement_cost) FROM film;
+
+SELECT title, rental_rate, replacement_cost FROM film
+WHERE replacement_cost =
+(
+SELECT MIN(replacement_cost) FROM film 
+);
+
+SELECT customer_id,first_name,last_name,(SELECT COUNT(*) FROM payment p WHERE p.customer_id = c.customer_id) as payment FROM customer c
+ORDER BY payment DESC
+
+
+SELECT customer_id, COUNT(amount) FROM payment
+GROUP BY customer_id
+ORDER BY COUNT(amount) DESC;
+
+
+
+
+
+
+
